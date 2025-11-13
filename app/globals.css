@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.bg-sunburst {
+  background: radial-gradient(circle at 50% -10%, rgba(255, 244, 199, 0.75), transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(199, 230, 255, 0.35) 50%, rgba(147, 197, 253, 0.15) 100%);
+}
+
+.glass-card {
+  backdrop-filter: blur(14px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.25));
+  border: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.film-grain {
+  position: relative;
+  isolation: isolate;
+}
+
+.film-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23noiseFilter)' opacity='0.075'/%3E%3C/svg%3E");
+  mix-blend-mode: soft-light;
+}
+
+.sunbeam {
+  position: absolute;
+  inset: -10% 15% auto 15%;
+  height: 45%;
+  background: radial-gradient(circle at 50% 0%, rgba(255, 248, 220, 0.85), rgba(255, 215, 0, 0));
+  filter: blur(40px);
+  opacity: 0.65;
+  z-index: -1;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1s;
+}
+
+.animation-delay-1500 {
+  animation-delay: 1.5s;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
